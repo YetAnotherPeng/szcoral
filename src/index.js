@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router } from 'react-router-dom';
 import './index.css';
-import Box from './Box';
+import { ConfigProvider } from 'antd';
+import App from './App';
+// import Box from './Box';
+// import Gallery1 from './Gallery';
+// import moment from 'moment';
+import 'moment/locale/zh-cn';
+import createBrowserHistory from './libs/history';
 import reportWebVitals from './reportWebVitals';
-import {Canvas} from "@react-three/fiber";
 
 ReactDOM.render(
-    <Canvas>
-        <ambientLight />
-        <pointLight position={[10, 10, 10]} />
-        {/*<Box position={[-1.2, 0, 0]} />*/}
-        <Box position={[0, 0, 0]} />
-    </Canvas>,
+    <Router history={createBrowserHistory}>
+        <ConfigProvider locale="{zhCN}">
+            <App/>
+        </ConfigProvider>
+    </Router>,
     document.getElementById('root')
 );
 

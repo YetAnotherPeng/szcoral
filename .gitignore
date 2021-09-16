@@ -107,4 +107,4 @@ dist
 .idea
 
 # 3rd library
-lib/
+external/
