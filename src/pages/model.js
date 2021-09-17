@@ -17,24 +17,26 @@ class Model extends Component{
         const divStyle = {
             textAlign : "center"
         }
-        const modelUrl = "http://127.0.0.1:3000/" + this.props.match.params.name + ".stl";
+        // const o0psUrl=192.168.84.48
+        const stgUrl="30.23.77.36";
+        const modelUrl = "http://"+stgUrl+":8000/" + this.props.match.params.name + ".stl";
         console.log("get url of model:"+modelUrl);
         // const modelUrl = this.props.match.params.name;
         return (
             <div style={divStyle}>
                 <STLViewer url= {modelUrl}
                 model={modelUrl}
-	            width={700}
-	            height={700}
+	            width={360}
+	            height={360}
 	            modelColor='#FF4500'
 	            backgroundColor='#EAEAEA'
 	            rotate={true}
 	            orbitControls={true}
-                cameraX={1}
-                cameraY={1}
-                cameraZ={null}
-                lights={[0, 0, 1]}
-                lightColor={'#F5F5F5'}
+                cameraX={-50}
+                cameraY={-310}
+                cameraZ={400}
+                lights={[-500, -500, 500]}
+                lightColor={'#FFFFFF'}
                 />
             </div>
         )
